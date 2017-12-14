@@ -181,6 +181,20 @@ module matr
 			enddo
 		end function stdmatmul
 
+		function stdmatmulnonallocatable(a,b)
+			real,dimension(:,:),intent(in) :: a,b
+			real,dimension(:,:),allocatable :: stdmatmulnonallocatable
+			n  = size (a,1)
+			allocate(stdmatmulnonallocatable(n,n))
+			do i=1,n
+				do j=1,n
+					do k=1,n
+ 						stdmatmulnonallocatable(i,j) = stdmatmulnonallocatable(i,j) + a(i,k)*b(k,j)
+					enddo
+				enddo
+			enddo
+		end function stdmatmulnonallocatable
+
 		function matasvecmul(a,b)
 			real,dimension(:),allocatable,intent(in) :: a,b
 			real,dimension(:),allocatable :: matasvecmul
@@ -209,6 +223,40 @@ module matr
 				enddo
 			enddo
 		end function matmultranspose
+
+		function matmulblock(a,b,block_size)
+			real,dimension(:,:),allocatable :: a,b
+			real,dimension(:,:),allocatable :: matmulblock
+			integer :: block_size , n,block_count
+			n  = size (a,1)
+			allocate(matmulblock(n,n))
+			blocks_count = n / block_size
+			do i=1,n-block_size+1,block_size 
+				do j =1,n-block_size+1,block_size  
+					do k=1,n-block_size+1,block_size 
+						matmulblock(i:i+block_size-1,j:j+block_size-1)=matmulblock(i:i+block_size-1,j:j+block_size-1)+stdmatmulnonallocatable(a(j:j+block_size-1,k:k+block_size-1),b(k:k+block_size-1,j:j+block_size-1))
+					enddo
+				enddo		
+			enddo
+		end function matmulblock
+
+		function blasmul(a,b)
+			real,dimension(:,:),allocatable :: blasmul
+			real,dimension(:,:),allocatable :: a,b
+			character :: TRANSA,TRANSB
+			integer :: M,N,K,LDA,LDB
+			real :: ALPHA,BETA
+			allocate(blasmul(n,n))
+			ALPHA =1.0
+			BETA =0.0
+			TRANSA = 'N'
+			TRANSB = 'N'
+			M=size(a,1)
+			N=M
+			K=M
+			call SGEMM(TRANSA,TRANSB,M,N,K,ALPHA,A,N,B,N,BETA,blasmul,N)
+			
+		end function blasmul
 
 end module matr
 

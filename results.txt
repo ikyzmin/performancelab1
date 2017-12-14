@@ -1,0 +1,41 @@
+  4x   4 matrix multiplication takes    0.0000 seconds
+   8x   8 matrix multiplication takes    0.0000 seconds
+  10x  10 matrix multiplication takes    0.0000 seconds
+ 100x 100 matrix multiplication takes    0.0080 seconds
+ 200x 200 matrix multiplication takes    0.0560 seconds
+ 500x 500 matrix multiplication takes    0.9360 seconds
+1000x1000 matrix multiplication takes    7.9800 seconds
+2000x2000 matrix multiplication takes  100.9400 seconds
+   4x   4 matrix multiplication takes    0.0000 seconds
+   8x   8 matrix multiplication takes    0.0000 seconds
+  10x  10 matrix multiplication takes    0.0000 seconds
+ 100x 100 matrix multiplication takes    0.0000 seconds
+ 200x 200 matrix multiplication takes    0.0000 seconds
+ 500x 500 matrix multiplication takes    0.0040 seconds
+1000x1000 matrix multiplication takes    0.0120 seconds
+2000x2000 matrix multiplication takes    0.0880 seconds
+vector(      16) multiplication takes    0.0000 seconds
+vector(      64) multiplication takes    0.0000 seconds
+vector(     100) multiplication takes    0.0000 seconds
+vector(   10000) multiplication takes    0.0000 seconds
+vector(   40000) multiplication takes    0.0000 seconds
+vector(  250000) multiplication takes    0.0000 seconds
+vector( 1000000) multiplication takes    0.0040 seconds
+vector( 4000000) multiplication takes    0.0040 seconds
+   4x   4 matrix multiplication takes    0.0000 seconds
+   8x   8 matrix multiplication takes    0.0000 seconds
+  16x  16 matrix multiplication takes    0.0000 seconds
+ 128x 128 matrix multiplication takes    0.0120 seconds
+ 256x 256 matrix multiplication takes    0.1040 seconds
+ 512x 512 matrix multiplication takes    0.9960 seconds
+1024x1024 matrix multiplication takes   10.0920 seconds
+2048x2048 matrix multiplication takes   81.1040 seconds
+   4x   4 matrix multiplication takes    2.1200 seconds
+   8x   8 matrix multiplication takes    2.0320 seconds
+  10x  10 matrix multiplication takes    1.9120 seconds
+ 100x 100 matrix multiplication takes    1.9560 seconds
+ 200x 200 matrix multiplication takes    1.8960 seconds
+ 500x 500 matrix multiplication takes    2.0840 seconds
+1000x1000 matrix multiplication takes    2.5600 seconds
+2000x2000 matrix multiplication takes    7.6240 seconds
+
